@@ -1,5 +1,4 @@
 import { ThemeProvider } from '@/components/theme-provider';
-import { GridBackground } from '@/components/ui/grid-background';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';

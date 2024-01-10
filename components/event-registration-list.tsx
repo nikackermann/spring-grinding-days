@@ -17,9 +17,7 @@ export function EventRegistrationList() {
     return (
         <div className="flex flex-col w-full min-h-screen px-4 py-6 md:px-6">
             <header className="mb-6">
-                <h1 className="text-3xl font-bold">
-                    Virtual Event Registration
-                </h1>
+                <h1 className="text-3xl font-bold">Spring & Grinding Days</h1>
                 <p className="text-gray-500 dark:text-gray-400">
                     A list of all participants who have registered for the
                     event.
