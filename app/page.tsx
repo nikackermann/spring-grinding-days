@@ -30,8 +30,8 @@ export default function Home() {
                         </span>
                         {/* <h3 className="ml-2">Presents</h3> */}
                     </div>
-                    <div className="w-[40rem] relative">
-                        <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                    <div>
+                        <h1 className="text-5xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
                             Spring & Grinding Days
                         </h1>
                     </div>
@@ -39,7 +39,6 @@ export default function Home() {
                         March 20th, 2024 - March 21st, 2024
                     </div>
                 </div>
-
                 <div className="w-full max-w-2xl">
                     <Card className="w-full">
                         <CardContent>
