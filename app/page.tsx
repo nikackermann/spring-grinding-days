@@ -24,7 +24,7 @@ export default function Home() {
                             <Image
                                 src="/logo-white.svg"
                                 alt="logo"
-                                width={118}
+                                width={130}
                                 height={50}
                             />
                         </span>
@@ -42,11 +42,11 @@ export default function Home() {
 
                 <div className="w-full max-w-2xl">
                     <Card className="w-full">
-                        <CardHeader>
+                        {/* <CardHeader>
                             <CardTitle>
                                 Join Us at Spring & Grinding Days!
                             </CardTitle>
-                        </CardHeader>
+                        </CardHeader> */}
                         <CardContent>
                             <RegisterForm />
                         </CardContent>
