@@ -10,6 +10,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 
 const initialState = {
     message: '',
+    email: '',
 };
 
 function SubmitButton() {
@@ -61,6 +62,7 @@ export function RegisterForm() {
                     placeholder="Name"
                     required
                     className="py-2 w-full rounded-full h-12 text-base border-2 focus-visible:ring-2"
+                    autoComplete="off"
                 />
                 <Input
                     type="email"
@@ -68,7 +70,11 @@ export function RegisterForm() {
                     name="email"
                     placeholder="Email"
                     required
-                    className="py-2 w-full rounded-full h-12 text-base border-2"
+                    aria-live="polite"
+                    className={`py-2 w-full rounded-full h-12 text-base border-2 ${
+                        state.email === 'email' ? 'border-red-500' : ''
+                    }`}
+                    autoComplete="off"
                 />
                 <Input
                     type="text"
@@ -77,6 +83,7 @@ export function RegisterForm() {
                     placeholder="Company"
                     required
                     className="py-2 w-full rounded-full h-12 text-base border-2"
+                    autoComplete="off"
                 />
                 <RadioGroup
                     defaultValue="both"
@@ -117,7 +124,9 @@ export function RegisterForm() {
                 </RadioGroup>
                 <SubmitButton />
             </div>
-            <p aria-live="polite">{state?.message}</p>
+            <p aria-live="polite" className="text-red-500 pt-4">
+                {state?.message}
+            </p>
         </form>
     );
 }

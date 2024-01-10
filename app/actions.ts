@@ -1,8 +1,12 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, unstable_noStore } from 'next/cache';
 import { sql } from '@vercel/postgres';
 import { z } from 'zod';
+import { Resend } from 'resend';
+import { EmailTemplate } from '@/components/email-template';
+
+const resend = new Resend('re_VpXRBWW8_5uaxGh71GCiZYQ5tDqb5HUtc');
 
 export async function createRegistration(prevState: any, formData: FormData) {
     const schema = z.object({
@@ -22,27 +26,46 @@ export async function createRegistration(prevState: any, formData: FormData) {
     // return zod form validation errors
     if (!validatedFormData.success) {
         // return the first error message
-        return { message: validatedFormData.error.issues[0].message };
+        return {
+            message: validatedFormData.error.issues[0].message,
+            email: validatedFormData.error.issues[0].path[0],
+        };
     }
 
-    const data = validatedFormData.data;
+    const valid = validatedFormData.data;
 
     try {
+        unstable_noStore();
         // Check if a registration with the given email already exists
         const existingRegistration = await sql`
-            SELECT * FROM registrations WHERE email = ${data.email}
+            SELECT * FROM registrations WHERE email = ${valid.email}
         `;
-
+        console.log(existingRegistration);
         if (existingRegistration.rowCount > 0) {
-            return { message: 'A registration with this email already exists' };
+            return {
+                message: 'A registration with this email already exists',
+                email: 'email',
+            };
         }
 
         const currentDate = new Date().toISOString();
 
         await sql`
             INSERT INTO registrations (name, email, company, attendance, registered_date)
-            VALUES (${data.name}, ${data.email}, ${data.company}, ${data.attendance}, ${currentDate})
+            VALUES (${valid.name}, ${valid.email}, ${valid.company}, ${valid.attendance}, ${currentDate})
         `;
+
+        const { data } = await resend.emails.send({
+            from: 'WAFIOS <event@updates.wafios.online>',
+            to: valid.email,
+            subject:
+                'Welcome to Spring & Grinding Days 2024 - Presented by WAFIOS',
+            react: EmailTemplate({
+                firstName: valid.name,
+            }) as React.ReactElement,
+        });
+
+        console.log('email send data --->', data);
 
         revalidatePath('/');
         return { message: `Registered!` };

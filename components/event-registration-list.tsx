@@ -11,6 +11,7 @@ import {
     TableCell,
     TableBody,
     Table,
+    TableFooter,
 } from '@/components/ui/table';
 
 type Registration = {
@@ -64,6 +65,13 @@ export function EventRegistrationList({
                         </TableRow>
                     ))}
                 </TableBody>
+                <TableFooter>
+                    <TableRow>
+                        <TableCell colSpan={4}>
+                            {registrations.length}
+                        </TableCell>
+                    </TableRow>
+                </TableFooter>
             </Table>
         </div>
     );
