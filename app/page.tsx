@@ -11,6 +11,7 @@ import {
 import { RegisterForm } from './register-form';
 import { ModeToggle } from '@/components/ui/mode-toggle';
 import { MovingBorder } from '@/components/ui/moving-border';
+import picture from '../public/logo-white.svg';
 
 export default function Home() {
     return (
@@ -21,10 +22,8 @@ export default function Home() {
                 <div className="text-center space-y-2 mb-6">
                     <div className="flex justify-center items-center">
                         <Image
-                            src="/logo-white.svg"
+                            src={picture}
                             alt="logo"
-                            width={130}
-                            height={50}
                             layout="fixed"
                             placeholder="empty"
                         />
