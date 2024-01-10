@@ -39,6 +39,7 @@ export default function Home() {
                         March 20th, 2024 - March 21st, 2024
                     </div>
                 </div>
+
                 <div className="w-full max-w-2xl">
                     <Card className="w-full">
                         <CardContent>
