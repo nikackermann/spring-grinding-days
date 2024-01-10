@@ -24,7 +24,7 @@ export default function Home() {
                             <Image
                                 src="/logo-white.svg"
                                 alt="logo"
-                                width={100}
+                                width={118}
                                 height={50}
                             />
                         </span>
