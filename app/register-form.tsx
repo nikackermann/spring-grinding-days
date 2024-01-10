@@ -79,7 +79,7 @@ export function RegisterForm() {
                         <RadioGroupItem
                             value="option-one"
                             id="option-one"
-                            className="h-5 w-5"
+                            className="h-6 w-6"
                         />
                         <Label htmlFor="option-one">Day 1 - Wednesday</Label>
                     </div>
@@ -87,7 +87,7 @@ export function RegisterForm() {
                         <RadioGroupItem
                             value="option-two"
                             id="option-two"
-                            className="h-5 w-5"
+                            className="h-6 w-6"
                         />
                         <Label htmlFor="option-two">Day 2 - Thursday</Label>
                     </div>
@@ -95,7 +95,7 @@ export function RegisterForm() {
                         <RadioGroupItem
                             value="option-three"
                             id="option-three"
-                            className="h-5 w-5"
+                            className="h-6 w-6"
                         />
                         <Label htmlFor="option-three">Both days</Label>
                     </div>
