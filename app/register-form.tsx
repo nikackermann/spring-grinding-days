@@ -48,7 +48,7 @@ export function RegisterForm() {
 
     return (
         <form className="w-full">
-            <div className="grid w-full items-center gap-4 mt-7">
+            <div className="grid w-full items-center gap-4 mt-6">
                 <Input
                     type="text"
                     id="name"
@@ -72,7 +72,7 @@ export function RegisterForm() {
                 />
                 <RadioGroup
                     defaultValue="option-one"
-                    className="py-2 w-full space-y-2"
+                    className="py-2 w-full space-y-2 ml-4"
                 >
                     <Label>I will be attending... </Label>
                     <div className="flex items-center space-x-2">

@@ -1,3 +1,5 @@
+import { EventRegistrationList } from '@/components/event-registration-list';
+
 const attendees = [
     { name: 'John Doe', company: 'Company A' },
     { name: 'Jane Smith', company: 'Company B' },
@@ -7,14 +9,7 @@ const attendees = [
 export default function Attending() {
     return (
         <div>
-            <h1>Attendees</h1>
-            <ul>
-                {attendees.map((attendee, index) => (
-                    <li key={index}>
-                        {attendee.name} from {attendee.company}
-                    </li>
-                ))}
-            </ul>
+            <EventRegistrationList />
         </div>
     );
 }

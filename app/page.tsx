@@ -20,14 +20,14 @@ export default function Home() {
             <div className="relative flex flex-col justify-start items-center pt-10 sm:pt-20 md:pt-32 lg:pt-40 xl:pt-48 min-h-screen z-10">
                 <div className="text-center space-y-2 mb-6">
                     <div className="flex justify-center items-center">
-                        <span>
-                            <Image
-                                src="/logo-white.svg"
-                                alt="logo"
-                                width={130}
-                                height={50}
-                            />
-                        </span>
+                        <Image
+                            src="/logo-white.svg"
+                            alt="logo"
+                            width={130}
+                            height={50}
+                            layout="fixed"
+                            placeholder="empty"
+                        />
                         {/* <h3 className="ml-2">Presents</h3> */}
                     </div>
                     <div>
@@ -35,18 +35,13 @@ export default function Home() {
                             Spring & Grinding Days
                         </h1>
                     </div>
-                    <div className="font-light text-sm text-neutral-400">
+                    <div className="font-extralight text-neutral-400">
                         March 20th, 2024 - March 21st, 2024
                     </div>
                 </div>
 
                 <div className="w-full max-w-2xl">
                     <Card className="w-full">
-                        {/* <CardHeader>
-                            <CardTitle>
-                                Join Us at Spring & Grinding Days!
-                            </CardTitle>
-                        </CardHeader> */}
                         <CardContent>
                             <RegisterForm />
                         </CardContent>
