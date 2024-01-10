@@ -48,7 +48,7 @@ export function RegisterForm() {
 
     return (
         <form className="w-full">
-            <div className="grid w-full items-center gap-4 mt-6">
+            <div className="grid w-full items-center gap-4 mt-7">
                 <Input
                     type="text"
                     id="name"
