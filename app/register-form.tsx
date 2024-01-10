@@ -53,7 +53,7 @@ export function RegisterForm() {
 
     return (
         <form action={formAction} className="w-full">
-            <div className="grid w-full items-center gap-4 mt-6">
+            <div className="grid w-full items-center gap-4">
                 <Input
                     type="text"
                     id="name"
