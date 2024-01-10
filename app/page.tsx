@@ -27,7 +27,7 @@ export default async function Home() {
                             spring grinding and wire forming technology.`}
                     </h3> */}
                 </div>
-                <div className="font-light text-md md:text-lg text-neutral-500 leading-loose tracking-wide mb-6 md:mb-8 mt-6">
+                <div className="font-light text-md md:text-lg text-neutral-500 leading-loose tracking-wide mb-4 md:mb-8 mt-2 md:mt-6">
                     MAR 20 — MAR 21
                 </div>
                 <div className="w-full max-w-2xl">
