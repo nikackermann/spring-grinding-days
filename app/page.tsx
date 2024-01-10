@@ -31,7 +31,7 @@ export default function Home() {
                         {/* <h3 className="ml-2">Presents</h3> */}
                     </div>
                     <div>
-                        <h1 className="text-3xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 p-2">
+                        <h1 className="text-3xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 p-2">
                             Spring & Grinding Days
                         </h1>
                     </div>
@@ -43,7 +43,9 @@ export default function Home() {
                 <div className="w-full max-w-2xl">
                     <Card className="w-full">
                         <CardHeader>
-                            Join Us at Spring & Grinding Days!
+                            <CardTitle>
+                                Join Us at Spring & Grinding Days!
+                            </CardTitle>
                         </CardHeader>
                         <CardContent>
                             <RegisterForm />
