@@ -17,7 +17,7 @@ export default function Home() {
         <main className="h-screen overflow-hidden dark:bg-black bg-white dark:bg-grid-white/[0.12] bg-grid-black/[0.12] relative p-2">
             <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] z-0"></div>
 
-            <div className="relative flex flex-col justify-center items-center min-h-screen z-10">
+            <div className="relative flex flex-col justify-center items-center min-h-screen z-10 -mt-6">
                 <div className="text-center space-y-4 mb-6">
                     <div className="flex justify-center items-center">
                         <span>
@@ -31,7 +31,7 @@ export default function Home() {
                         {/* <h3 className="ml-2">Presents</h3> */}
                     </div>
                     <div>
-                        <h1 className="text-5xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                        <h1 className="text-5xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 p-2">
                             Spring & Grinding Days
                         </h1>
                     </div>
