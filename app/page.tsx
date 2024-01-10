@@ -35,9 +35,9 @@ export default function Home() {
                             Spring & Grinding Days
                         </h1>
                     </div>
-                    <div className="font-light text-sm text-neutral-400">
+                    {/* <div className="font-light text-sm text-neutral-400">
                         March 20th, 2024 - March 21st, 2024
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="w-full max-w-2xl">
