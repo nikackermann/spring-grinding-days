@@ -40,7 +40,7 @@ export async function createRegistration(prevState: any, formData: FormData) {
         const existingRegistration = await sql`
             SELECT * FROM registrations WHERE email = ${valid.email}
         `;
-        console.log(existingRegistration);
+
         if (existingRegistration.rowCount > 0) {
             return {
                 message: 'A registration with this email already exists',
@@ -55,7 +55,7 @@ export async function createRegistration(prevState: any, formData: FormData) {
             VALUES (${valid.name}, ${valid.email}, ${valid.company}, ${valid.attendance}, ${currentDate})
         `;
 
-        const { data } = await resend.emails.send({
+        resend.emails.send({
             from: 'WAFIOS <event@updates.wafios.online>',
             to: valid.email,
             subject:
@@ -65,10 +65,8 @@ export async function createRegistration(prevState: any, formData: FormData) {
             }) as React.ReactElement,
         });
 
-        console.log('email send data --->', data);
-
         revalidatePath('/');
-        return { message: `Registered!` };
+        return { message: `Registered!`, status: 'success' };
     } catch (e) {
         console.error(e);
         return { message: 'Failed to register' };
