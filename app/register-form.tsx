@@ -2,7 +2,7 @@
 
 import { useFormState } from 'react-dom';
 import { useFormStatus } from 'react-dom';
-import { createUser } from '@/app/actions';
+import { createRegistration } from '@/app/actions';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
@@ -47,10 +47,10 @@ function SubmitButton() {
 }
 
 export function RegisterForm() {
-    const [state, formAction] = useFormState(createUser, initialState);
+    const [state, formAction] = useFormState(createRegistration, initialState);
 
     return (
-        <form className="w-full">
+        <form className="w-full" action={formAction}>
             <div className="grid w-full items-center gap-4 mt-6">
                 <Input
                     type="text"
@@ -74,7 +74,7 @@ export function RegisterForm() {
                     className="py-2 w-full rounded-full h-12 text-base border-2"
                 />
                 <RadioGroup
-                    defaultValue="option-one"
+                    defaultValue="option-three"
                     className="py-2 w-full space-y-2 ml-4"
                 >
                     <Label>I will be attending... </Label>
@@ -84,8 +84,9 @@ export function RegisterForm() {
                             id="option-one"
                             className="h-6 w-6"
                             aria-label="Day 1 - Wednesday"
+                            required
                         />
-                        <Label htmlFor="option-one">Day 1 - Wednesday</Label>
+                        <Label htmlFor="option-one">Day 1 - March 20</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem
@@ -93,8 +94,9 @@ export function RegisterForm() {
                             id="option-two"
                             className="h-6 w-6"
                             aria-label="Day 2 - Thursday"
+                            required
                         />
-                        <Label htmlFor="option-two">Day 2 - Thursday</Label>
+                        <Label htmlFor="option-two">Day 2 - March 21</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem
@@ -102,6 +104,7 @@ export function RegisterForm() {
                             id="option-three"
                             className="h-6 w-6"
                             aria-label="Both days"
+                            required
                         />
                         <Label htmlFor="option-three">Both days</Label>
                     </div>
