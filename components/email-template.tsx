@@ -18,7 +18,11 @@ const baseUrl = process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
     : '';
 
-export const EmailTemplate = () => (
+type Props = {
+    name: string;
+};
+
+export const EmailTemplate = ({ name }: Props) => (
     <Html>
         <Head />
         <Preview>Welcome to Spring & Grinding Days 2024</Preview>

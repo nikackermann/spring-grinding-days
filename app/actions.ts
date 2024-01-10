@@ -61,7 +61,7 @@ export async function createRegistration(prevState: any, formData: FormData) {
             subject:
                 'Welcome to Spring & Grinding Days 2024 - Presented by WAFIOS',
             react: EmailTemplate({
-                firstName: valid.name,
+                name: valid.name,
             }) as React.ReactElement,
         });
 
