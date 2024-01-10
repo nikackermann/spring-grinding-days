@@ -42,15 +42,16 @@ export default function Home() {
 
                 <div className="w-full max-w-2xl">
                     <Card className="w-full">
+                        <CardHeader>Register</CardHeader>
                         <CardContent>
                             <RegisterForm />
                         </CardContent>
                     </Card>
                 </div>
-                <footer className="absolute bottom-0 w-full text-center py-4 text-neutral-400 text-sm mb-4">
+                {/* <footer className="absolute bottom-0 w-full text-center py-4 text-neutral-400 text-sm mb-4">
                     &copy; {new Date().getFullYear()} Wafios (WMC). All rights
                     reserved.
-                </footer>
+                </footer> */}
             </div>
         </main>
     );
