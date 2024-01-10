@@ -54,21 +54,21 @@ export function RegisterForm() {
                     id="name"
                     placeholder="Name"
                     required
-                    className="py-2 w-full rounded-full h-12 text-base"
+                    className="py-2 w-full rounded-full h-12 text-base border-2 focus-visible:ring-2"
                 />
                 <Input
                     type="email"
                     id="email"
                     placeholder="Email"
                     required
-                    className="py-2 w-full rounded-full h-12 text-base"
+                    className="py-2 w-full rounded-full h-12 text-base border-2"
                 />
                 <Input
                     type="text"
                     id="company"
                     placeholder="Company"
                     required
-                    className="py-2 w-full rounded-full h-12 text-base"
+                    className="py-2 w-full rounded-full h-12 text-base border-2"
                 />
                 <RadioGroup
                     defaultValue="option-one"
