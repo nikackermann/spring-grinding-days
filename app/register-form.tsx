@@ -83,6 +83,7 @@ export function RegisterForm() {
                             value="option-one"
                             id="option-one"
                             className="h-6 w-6"
+                            aria-label="Day 1 - Wednesday"
                         />
                         <Label htmlFor="option-one">Day 1 - Wednesday</Label>
                     </div>
@@ -91,6 +92,7 @@ export function RegisterForm() {
                             value="option-two"
                             id="option-two"
                             className="h-6 w-6"
+                            aria-label="Day 2 - Thursday"
                         />
                         <Label htmlFor="option-two">Day 2 - Thursday</Label>
                     </div>
@@ -99,6 +101,7 @@ export function RegisterForm() {
                             value="option-three"
                             id="option-three"
                             className="h-6 w-6"
+                            aria-label="Both days"
                         />
                         <Label htmlFor="option-three">Both days</Label>
                     </div>
