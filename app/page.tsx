@@ -8,7 +8,7 @@ export default async function Home() {
         <main className="h-screen overflow-hidden dark:bg-black bg-white dark:bg-grid-white/[0.1] bg-grid-black/[0.1] relative p-2">
             <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] z-0"></div>
 
-            <div className="relative flex flex-col justify-start items-center pt-10 sm:pt-20 md:pt-20 lg:pt-20 xl:pt-32 min-h-screen z-10">
+            <div className="relative flex flex-col justify-start items-center pt-6 sm:pt-20 md:pt-20 lg:pt-20 xl:pt-32 min-h-screen z-10">
                 <div className="text-center space-y-1">
                     <div className="flex items-center justify-center">
                         <Image

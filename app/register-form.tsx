@@ -70,12 +70,6 @@ export function RegisterForm() {
 
     const formRef = useRef<HTMLFormElement>(null);
 
-    useEffect(() => {
-        if (state.status === 'success') {
-            formRef.current?.reset();
-        }
-    }, [state.status]);
-
     return (
         <form ref={formRef} className="w-full" action={formAction}>
             <div className="grid w-full items-center gap-4">
@@ -150,21 +144,9 @@ export function RegisterForm() {
                     aria-label="Register"
                     type="submit"
                     aria-disabled={pending}
-                    className={`rounded-full transition-colors duration-500 ${
-                        state?.status === 'success' ? 'bg-green-500' : ''
-                    }`}
+                    className="rounded-full h-10"
                 >
-                    <span className="transition-opacity duration-500">
-                        {state?.status === 'success' ? (
-                            <span className="opacity-0 animate-fade-in">
-                                Success! - Check your email
-                            </span>
-                        ) : (
-                            <span className="opacity-0 animate-fade-in">
-                                Register
-                            </span>
-                        )}
-                    </span>
+                    Register
                 </Button>
             </div>
             {/* <p
