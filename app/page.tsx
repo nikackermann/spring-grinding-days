@@ -17,8 +17,8 @@ export default function Home() {
         <main className="h-screen overflow-hidden dark:bg-black bg-white dark:bg-grid-white/[0.12] bg-grid-black/[0.12] relative p-2">
             <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] z-0"></div>
 
-            <div className="relative flex flex-col justify-center items-center min-h-screen z-10 -mt-6">
-                <div className="text-center space-y-4 mb-6">
+            <div className="relative flex flex-col justify-center items-center min-h-screen z-10 -mt-12">
+                <div className="text-center space-y-2 mb-6">
                     <div className="flex justify-center items-center">
                         <span>
                             <Image
@@ -31,13 +31,13 @@ export default function Home() {
                         {/* <h3 className="ml-2">Presents</h3> */}
                     </div>
                     <div>
-                        <h1 className="text-5xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 p-2">
+                        <h1 className="text-3xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 p-2">
                             Spring & Grinding Days
                         </h1>
                     </div>
-                    {/* <div className="font-light text-sm text-neutral-400">
+                    <div className="font-light text-sm text-neutral-400">
                         March 20th, 2024 - March 21st, 2024
-                    </div> */}
+                    </div>
                 </div>
 
                 <div className="w-full max-w-2xl">
