@@ -13,51 +13,56 @@ import {
     Table,
 } from '@/components/ui/table';
 
-export function EventRegistrationList() {
+type Registration = {
+    id: number;
+    name: string;
+    email: string;
+    company: string;
+    attendance: string;
+    registered_date: Date;
+};
+
+export function EventRegistrationList({
+    registrations,
+}: {
+    registrations: Registration[];
+}) {
     return (
         <div className="flex flex-col w-full min-h-screen px-4 py-6 md:px-6">
             <header className="mb-6">
                 <h1 className="text-3xl font-bold">Spring & Grinding Days</h1>
                 <p className="text-gray-500 dark:text-gray-400">
-                    A list of all participants who have registered for the
-                    event.
+                    All registrations for Spring & Grinding Days
                 </p>
             </header>
-            <div className="flex justify-between items-center mb-4">
+            {/* <div className="flex justify-between items-center mb-4">
                 <div className="w-full max-w-md">
                     <Input placeholder="Search participants" type="search" />
                 </div>
                 <Button className="ml-auto">Export as CSV</Button>
-            </div>
+            </div> */}
             <Table>
                 <TableHeader>
                     <TableRow>
                         <TableHead>Name</TableHead>
                         <TableHead>Email</TableHead>
-                        <TableHead>Registration Date</TableHead>
+                        <TableHead>Company</TableHead>
+                        <TableHead>Date</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    <TableRow>
-                        <TableCell>John Doe</TableCell>
-                        <TableCell>johndoe@example.com</TableCell>
-                        <TableCell>2024-01-01</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell>Jane Smith</TableCell>
-                        <TableCell>janesmith@example.com</TableCell>
-                        <TableCell>2024-01-02</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell>Emma Johnson</TableCell>
-                        <TableCell>emmajohnson@example.com</TableCell>
-                        <TableCell>2024-01-03</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell>Oliver Williams</TableCell>
-                        <TableCell>oliverwilliams@example.com</TableCell>
-                        <TableCell>2024-01-04</TableCell>
-                    </TableRow>
+                    {registrations.map((registration, index) => (
+                        <TableRow key={index}>
+                            <TableCell>{registration.name}</TableCell>
+                            <TableCell>{registration.email}</TableCell>
+                            <TableCell>{registration.company}</TableCell>
+                            <TableCell>
+                                {new Date(
+                                    registration.registered_date
+                                ).toLocaleDateString()}
+                            </TableCell>
+                        </TableRow>
+                    ))}
                 </TableBody>
             </Table>
         </div>

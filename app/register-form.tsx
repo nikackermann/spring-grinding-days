@@ -18,6 +18,8 @@ function SubmitButton() {
     return (
         <button
             aria-label="Register"
+            type="submit"
+            aria-disabled={pending}
             className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-sm font-semibold leading-6  text-white inline-block"
         >
             <span className="absolute inset-0 overflow-hidden rounded-full">
@@ -50,11 +52,12 @@ export function RegisterForm() {
     const [state, formAction] = useFormState(createRegistration, initialState);
 
     return (
-        <form className="w-full" action={formAction}>
+        <form action={formAction} className="w-full">
             <div className="grid w-full items-center gap-4 mt-6">
                 <Input
                     type="text"
                     id="name"
+                    name="name"
                     placeholder="Name"
                     required
                     className="py-2 w-full rounded-full h-12 text-base border-2 focus-visible:ring-2"
@@ -62,6 +65,7 @@ export function RegisterForm() {
                 <Input
                     type="email"
                     id="email"
+                    name="email"
                     placeholder="Email"
                     required
                     className="py-2 w-full rounded-full h-12 text-base border-2"
@@ -69,19 +73,21 @@ export function RegisterForm() {
                 <Input
                     type="text"
                     id="company"
+                    name="company"
                     placeholder="Company"
                     required
                     className="py-2 w-full rounded-full h-12 text-base border-2"
                 />
                 <RadioGroup
-                    defaultValue="option-three"
+                    defaultValue="both"
                     className="py-2 w-full space-y-2 ml-4"
+                    name="attendance"
                 >
                     <Label>I will be attending... </Label>
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem
-                            value="option-one"
-                            id="option-one"
+                            value="day-one"
+                            id="day-one"
                             className="h-6 w-6"
                             aria-label="Day 1 - Wednesday"
                             required
@@ -90,8 +96,8 @@ export function RegisterForm() {
                     </div>
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem
-                            value="option-two"
-                            id="option-two"
+                            value="day-two"
+                            id="day-two"
                             className="h-6 w-6"
                             aria-label="Day 2 - Thursday"
                             required
@@ -100,8 +106,8 @@ export function RegisterForm() {
                     </div>
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem
-                            value="option-three"
-                            id="option-three"
+                            value="both"
+                            id="both"
                             className="h-6 w-6"
                             aria-label="Both days"
                             required
@@ -111,6 +117,7 @@ export function RegisterForm() {
                 </RadioGroup>
                 <SubmitButton />
             </div>
+            <p aria-live="polite">{state?.message}</p>
         </form>
     );
 }

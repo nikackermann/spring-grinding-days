@@ -4,7 +4,7 @@ import { RegisterForm } from './register-form';
 import { ModeToggle } from '@/components/ui/mode-toggle';
 import picture from '../public/logo-white.svg';
 
-export default function Home() {
+export default async function Home() {
     return (
         <main className="h-screen overflow-hidden dark:bg-black bg-white dark:bg-grid-white/[0.1] bg-grid-black/[0.1] relative p-2">
             <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] z-0"></div>
@@ -28,7 +28,7 @@ export default function Home() {
                             spring grinding and wire forming technology.`}
                     </h3> */}
                 </div>
-                <div className="font-extralight text-neutral-500 leading-loose tracking-wide mb-4 mt-2">
+                <div className="font-light text-md md:text-lg text-neutral-500 leading-loose tracking-wide mb-4 mt-2">
                     MAR 20 — MAR 21
                 </div>
                 <div className="w-full max-w-2xl">
