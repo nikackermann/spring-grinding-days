@@ -42,7 +42,9 @@ export default function Home() {
 
                 <div className="w-full max-w-2xl">
                     <Card className="w-full">
-                        <CardHeader>Register</CardHeader>
+                        <CardHeader>
+                            Join Us at Spring & Grinding Days!
+                        </CardHeader>
                         <CardContent>
                             <RegisterForm />
                         </CardContent>

@@ -24,9 +24,9 @@ function SubmitButton() {
                 <span>Register</span>
                 <svg
                     fill="none"
-                    height="20"
+                    height="28"
                     viewBox="0 0 24 24"
-                    width="20"
+                    width="28"
                     xmlns="http://www.w3.org/2000/svg"
                 >
                     <path
@@ -47,7 +47,7 @@ export function RegisterForm() {
     const [state, formAction] = useFormState(createUser, initialState);
 
     return (
-        <form className="w-full mt-8">
+        <form className="w-full">
             <div className="grid w-full items-center gap-4">
                 <Input
                     type="text"
@@ -72,21 +72,30 @@ export function RegisterForm() {
                 />
                 <RadioGroup
                     defaultValue="option-one"
-                    className="py-2 w-full space-y-2 ml-2"
+                    className="py-2 w-full space-y-2"
                 >
                     <Label>I will be attending... </Label>
                     <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="option-one" id="option-one" />
+                        <RadioGroupItem
+                            value="option-one"
+                            id="option-one"
+                            className="h-5 w-5"
+                        />
                         <Label htmlFor="option-one">Day 1 - Wednesday</Label>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="option-two" id="option-two" />
+                        <RadioGroupItem
+                            value="option-two"
+                            id="option-two"
+                            className="h-5 w-5"
+                        />
                         <Label htmlFor="option-two">Day 2 - Thursday</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem
                             value="option-three"
                             id="option-three"
+                            className="h-5 w-5"
                         />
                         <Label htmlFor="option-three">Both days</Label>
                     </div>
