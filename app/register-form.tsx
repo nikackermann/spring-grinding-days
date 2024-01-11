@@ -9,7 +9,6 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import dynamic from 'next/dynamic';
-import Loading from './loading';
 
 const initialState = {
     message: '',
@@ -19,7 +18,7 @@ const initialState = {
 function Spinner() {
     return (
         <svg
-            className="animate-spin h-5 w-5 text-white"
+            className="animate-spin h-5 w-5 text-black"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -47,9 +46,22 @@ const Success = dynamic(() => import('@/components/ui/success'), {
     ssr: true, // Add this line
 });
 
+function SubmitButton() {
+    const { pending } = useFormStatus();
+    return (
+        <Button
+            aria-label="Register"
+            type="submit"
+            aria-disabled={pending}
+            className="rounded-full h-10 relative flex items-center justify-center"
+        >
+            {pending ? <Spinner /> : 'Register'}
+        </Button>
+    );
+}
+
 export function RegisterForm() {
     const [state, formAction] = useFormState(createRegistration, initialState);
-    const { pending } = useFormStatus();
     const formRef = useRef<HTMLFormElement>(null);
 
     useEffect(() => {
@@ -58,9 +70,9 @@ export function RegisterForm() {
         }
     }, [state.status]);
 
-    if (pending) {
-        return <Loading />;
-    }
+    // if (pending) {
+    //     return <Loading />;
+    // }
 
     if (state.status === 'success') {
         return (
@@ -140,14 +152,7 @@ export function RegisterForm() {
                         <Label htmlFor="option-three">Both days</Label>
                     </div>
                 </RadioGroup>
-                <Button
-                    aria-label="Register"
-                    type="submit"
-                    aria-disabled={pending}
-                    className="rounded-full h-10 relative flex items-center justify-center"
-                >
-                    {state.status === 'success' ? <Spinner /> : 'Register'}
-                </Button>
+                <SubmitButton />
             </div>
         </form>
     );
