@@ -34,7 +34,7 @@ export function RegisterForm() {
 
     if (state.status === 'success') {
         return (
-            <div className="transition-opacity duration-500 ease-in-out opacity-0 animate-fade-in">
+            <div className="h-12">
                 <Success />
             </div>
         );
