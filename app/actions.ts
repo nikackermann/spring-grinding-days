@@ -50,19 +50,21 @@ export async function createRegistration(prevState: any, formData: FormData) {
 
         const currentDate = new Date().toISOString();
 
-        // Optimistically return a success message
-        const optimisticResponse = {
-            message: `Registered!`,
-            status: 'success',
-        };
-
-        // Start the SQL insert but don't await it
         sql`
-            INSERT INTO registrations (name, email, company, attendance, registered_date)
-            VALUES (${valid.name}, ${valid.email}, ${valid.company}, ${valid.attendance}, ${currentDate})
-        `
+        INSERT INTO registrations (name, email, company, attendance, registered_date)
+        VALUES (${valid.name}, ${valid.email}, ${valid.company}, ${valid.attendance}, ${currentDate})
+    `
             .then(() => {
-                // If the SQL insert succeeds, revalidate the path
+                // resend.emails.send({
+                //     from: 'Spring and Grinding Day <event@updates.wafios.online>',
+                //     to: valid.email,
+                //     subject:
+                //         'Welcome to Spring & Grinding Days 2024 - Presented by WAFIOS',
+                //     react: EmailTemplate({
+                //         name: valid.name,
+                //     }) as React.ReactElement,
+                // });
+
                 revalidatePath('/');
             })
             .catch((e) => {
@@ -70,17 +72,7 @@ export async function createRegistration(prevState: any, formData: FormData) {
                 console.error(e);
             });
 
-        resend.emails.send({
-            from: 'Spring and Grinding Day <event@updates.wafios.online>',
-            to: valid.email,
-            subject:
-                'Welcome to Spring & Grinding Days 2024 - Presented by WAFIOS',
-            react: EmailTemplate({
-                name: valid.name,
-            }) as React.ReactElement,
-        });
-
-        return optimisticResponse;
+        return { message: `Registered!`, status: 'success' };
     } catch (e) {
         console.error(e);
         return { message: 'Failed to register' };
