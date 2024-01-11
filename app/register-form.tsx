@@ -8,12 +8,18 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Success } from '@/components/ui/success';
+import dynamic from 'next/dynamic';
 
 const initialState = {
     message: '',
     email: '',
 };
+
+// Dynamically import the Success component
+const Success = dynamic(() => import('@/components/ui/success'), {
+    // This option will make the component get preloaded in the background
+    ssr: false, // Add this line
+});
 
 export function RegisterForm() {
     const [state, formAction] = useFormState(createRegistration, initialState);
