@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import dynamic from 'next/dynamic';
+import Loading from './loading';
 
 const initialState = {
     message: '',
@@ -31,6 +32,10 @@ export function RegisterForm() {
             formRef.current?.reset();
         }
     }, [state.status]);
+
+    if (pending) {
+        return <Loading />;
+    }
 
     if (state.status === 'success') {
         return (
