@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useFormState } from 'react-dom';
 import { useFormStatus } from 'react-dom';
 import { createRegistration } from '@/app/actions';
@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Success } from '@/components/ui/success';
+import Loading from './loading';
 
 const initialState = {
     message: '',
@@ -17,16 +18,26 @@ const initialState = {
 
 export function RegisterForm() {
     const [state, formAction] = useFormState(createRegistration, initialState);
-
     const { pending } = useFormStatus();
-
+    const [loading, setLoading] = useState(false);
     const formRef = useRef<HTMLFormElement>(null);
 
     useEffect(() => {
         if (state.status === 'success') {
             formRef.current?.reset();
+            setLoading(false);
         }
     }, [state.status]);
+
+    const handleSubmit = async (event: any) => {
+        event.preventDefault();
+        setLoading(true);
+        // handle form submission
+    };
+
+    if (loading) {
+        return <Loading />;
+    }
 
     if (state.status === 'success') {
         return (
@@ -37,7 +48,12 @@ export function RegisterForm() {
     }
 
     return (
-        <form ref={formRef} className="w-full" action={formAction}>
+        <form
+            ref={formRef}
+            className="w-full"
+            action={formAction}
+            onSubmit={handleSubmit}
+        >
             <div className="grid w-full items-center gap-4">
                 <Input
                     type="text"

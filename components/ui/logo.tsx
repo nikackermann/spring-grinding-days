@@ -12,8 +12,9 @@ export function Logo() {
             <Image
                 src={theme === 'light' ? LogoBlue : LogoWhite}
                 alt="logo"
-                layout="fixed"
-                placeholder="empty"
+                height={100}
+                className="w-auto" // Add this line
+                priority
             />
         </div>
     );
