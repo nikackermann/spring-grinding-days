@@ -56,7 +56,7 @@ export async function createRegistration(prevState: any, formData: FormData) {
         `;
 
         resend.emails.send({
-            from: 'Wafios (WMC) <event@updates.wafios.online>',
+            from: 'Spring and Grinding Day <event@updates.wafios.online>',
             to: valid.email,
             subject:
                 'Welcome to Spring & Grinding Days 2024 - Presented by WAFIOS',

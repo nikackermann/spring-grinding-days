@@ -25,7 +25,9 @@ type Props = {
 export const EmailTemplate = ({ name }: Props) => (
     <Html>
         <Head />
-        <Preview>Welcome to Spring & Grinding Days 2024</Preview>
+        <Preview>
+            {`We're excited to have you at Spring & Grinding Days 2024. Here are some details about the event`}
+        </Preview>
         <Body>
             <Container>
                 <Section>
@@ -35,7 +37,6 @@ export const EmailTemplate = ({ name }: Props) => (
                         height="31"
                         alt="Wafios"
                     />
-                    <Text>{`${baseUrl}/static/logo.png`}</Text>
                 </Section>
                 <Section>
                     <Heading>Hello, {name}!</Heading>
