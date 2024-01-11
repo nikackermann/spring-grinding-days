@@ -59,15 +59,45 @@ export const EmailTemplate = ({ name }: Props) => (
                     <Hr />
                     <Heading>Hotel Information</Heading>
                     <Text>
-                        We have partnered with Hotel XYZ to provide discounted
-                        rates for attendees. You can book a room on their
-                        website.
+                        We have partnered with Even Hotel Chicago-Tinley
+                        Park-Conv Ctr, an IHG Hotel located at 18501 Convention
+                        Center Dr, Tinley Park, IL 60477 to provide discounted
+                        rates for attendees. You can book a room by:
+                    </Text>
+                    <Text>
+                        - Calling the front desk at 708-444-1100 and referencing
+                        the Wafios - Midwest Technical Center, or group code WAF
+                    </Text>
+                    <Text>
+                        - Going on their website{' '}
+                        <Link href="http://www.evenhotels.com/chitinleypark">
+                            http://www.evenhotels.com/chitinleypark
+                        </Link>
+                        , entering their stay dates & group code WAF
+                    </Text>
+                    <Text>
+                        Link:{' '}
+                        <Link href="http://www.evenhotels.com/chitinleypark">
+                            Wafios - Midwest Technical Center
+                        </Link>
                     </Text>
                     <Hr />
                     <Heading>Contact Information</Heading>
                     <Text>
-                        If you have any questions, please contact us at
-                        info@example.com or call us at (123) 456-7890.
+                        If you have any questions, please feel free to reach
+                        out:
+                    </Text>
+                    <Text>
+                        <strong>Name:</strong> Brian Davi
+                    </Text>
+                    <Text>
+                        <strong>Email:</strong>{' '}
+                        <Link href="mailto:BrianD@wafios.us">
+                            BrianD@wafios.us
+                        </Link>
+                    </Text>
+                    <Text>
+                        <strong>Phone:</strong> 203-871-2072
                     </Text>
                 </Section>
             </Container>

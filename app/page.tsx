@@ -1,26 +1,18 @@
-import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { RegisterForm } from './register-form';
-import picture from '../public/logo-white.svg';
+// import { ModeToggle } from '@/components/ui/mode-toggle';
+import { Logo } from '@/components/ui/logo';
+import Banner from '@/components/ui/banner';
 
 export default async function Home() {
     return (
         <main className="h-screen overflow-hidden dark:bg-black bg-white dark:bg-grid-white/[0.1] bg-grid-black/[0.1] relative p-2">
             <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] z-0"></div>
-
-            <div className="relative flex flex-col justify-start items-center pt-6 sm:pt-20 md:pt-20 lg:pt-20 xl:pt-32 min-h-screen z-10">
+            {/* <ModeToggle /> */}
+            <div className="relative flex flex-col justify-start items-center pt-6 md:pt-24 min-h-screen z-10">
+                <Logo />
                 <div className="text-center space-y-1">
-                    <div className="flex items-center justify-center">
-                        <Image
-                            src={picture}
-                            alt="logo"
-                            layout="fixed"
-                            placeholder="empty"
-                        />
-                    </div>
-                    <h1 className="text-3xl md:text-6xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 p-2">
-                        Spring & Grinding Days
-                    </h1>
+                    <Banner />
                     {/* <h3 className="max-w-2xl text-neutral-400 hidden md:block">
                         {`Join us for daily presentations at 11 AM and 3 PM,
                             where we'll showcase the latest advancements in
