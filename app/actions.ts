@@ -4,7 +4,7 @@ import { revalidatePath, unstable_noStore } from 'next/cache';
 import { sql } from '@vercel/postgres';
 import { z } from 'zod';
 import { Resend } from 'resend';
-import { EmailTemplate } from '@/components/email-template';
+import { EmailTemplate } from '@/emails/email-template';
 
 const resend = new Resend('re_VpXRBWW8_5uaxGh71GCiZYQ5tDqb5HUtc');
 
@@ -56,7 +56,7 @@ export async function createRegistration(prevState: any, formData: FormData) {
         `;
 
         resend.emails.send({
-            from: 'WAFIOS <event@updates.wafios.online>',
+            from: 'Wafios (WMC) <event@updates.wafios.online>',
             to: valid.email,
             subject:
                 'Welcome to Spring & Grinding Days 2024 - Presented by WAFIOS',
