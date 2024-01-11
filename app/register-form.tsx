@@ -34,8 +34,8 @@ export function RegisterForm() {
 
     if (state.status === 'success') {
         return (
-            <div className="h-12">
-                <Success />
+            <div className="h-12 relative">
+                <Success className="absolute" />
             </div>
         );
     }
