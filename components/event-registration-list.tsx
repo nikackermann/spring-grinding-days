@@ -23,6 +23,12 @@ type Registration = {
     registered_date: Date;
 };
 
+const attendanceMap: any = {
+    both: 'Both',
+    'day-one': 'Day 1',
+    'day-two': 'Day 2',
+};
+
 export function EventRegistrationList({
     registrations,
 }: {
@@ -48,7 +54,8 @@ export function EventRegistrationList({
                         <TableHead>Name</TableHead>
                         <TableHead>Email</TableHead>
                         <TableHead>Company</TableHead>
-                        <TableHead>Date</TableHead>
+                        <TableHead>Attending</TableHead>
+                        <TableHead>Registration Date</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -57,6 +64,9 @@ export function EventRegistrationList({
                             <TableCell>{registration.name}</TableCell>
                             <TableCell>{registration.email}</TableCell>
                             <TableCell>{registration.company}</TableCell>
+                            <TableCell>
+                                {attendanceMap[registration.attendance]}
+                            </TableCell>
                             <TableCell>
                                 {new Date(
                                     registration.registered_date
@@ -67,7 +77,7 @@ export function EventRegistrationList({
                 </TableBody>
                 <TableFooter>
                     <TableRow>
-                        <TableCell colSpan={4}>
+                        <TableCell colSpan={5}>
                             {registrations.length}
                         </TableCell>
                     </TableRow>
