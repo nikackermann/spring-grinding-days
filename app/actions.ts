@@ -6,7 +6,7 @@ import { z } from 'zod';
 import { Resend } from 'resend';
 import { EmailTemplate } from '@/components/email-template';
 
-const resend = new Resend('re_VpXRBWW8_5uaxGh71GCiZYQ5tDqb5HUtc');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function createRegistration(prevState: any, formData: FormData) {
     const schema = z.object({
