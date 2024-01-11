@@ -50,28 +50,22 @@ export async function createRegistration(prevState: any, formData: FormData) {
 
         const currentDate = new Date().toISOString();
 
-        sql`
-        INSERT INTO registrations (name, email, company, attendance, registered_date)
-        VALUES (${valid.name}, ${valid.email}, ${valid.company}, ${valid.attendance}, ${currentDate})
-    `
-            .then(() => {
-                resend.emails.send({
-                    from: 'Spring and Grinding Day <event@updates.wafios.online>',
-                    to: valid.email,
-                    subject:
-                        'Welcome to Spring & Grinding Days 2024 - Presented by WAFIOS',
-                    react: EmailTemplate({
-                        name: valid.name,
-                    }) as React.ReactElement,
-                });
+        await sql`
+            INSERT INTO registrations (name, email, company, attendance, registered_date)
+            VALUES (${valid.name}, ${valid.email}, ${valid.company}, ${valid.attendance}, ${currentDate})
+        `;
 
-                revalidatePath('/');
-            })
-            .catch((e) => {
-                // If the SQL insert fails, log the error
-                console.error(e);
-            });
+        // resend.emails.send({
+        //     from: 'Spring and Grinding Day <event@updates.wafios.online>',
+        //     to: valid.email,
+        //     subject:
+        //         'Welcome to Spring & Grinding Days 2024 - Presented by WAFIOS',
+        //     react: EmailTemplate({
+        //         name: valid.name,
+        //     }) as React.ReactElement,
+        // });
 
+        revalidatePath('/');
         return { message: `Registered!`, status: 'success' };
     } catch (e) {
         console.error(e);

@@ -18,7 +18,7 @@ const initialState = {
 // Dynamically import the Success component
 const Success = dynamic(() => import('@/components/ui/success'), {
     // This option will make the component get preloaded in the background
-    ssr: false, // Add this line
+    ssr: true, // Add this line
 });
 
 export function RegisterForm() {
@@ -34,7 +34,7 @@ export function RegisterForm() {
 
     if (state.status === 'success') {
         return (
-            <div className="h-12 transition-opacity duration-500 ease-in-out opacity-0 animate-fade-in">
+            <div className="h-12">
                 <Success />
             </div>
         );
