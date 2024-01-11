@@ -30,11 +30,12 @@ export const EmailTemplate = ({ name }: Props) => (
             <Container>
                 <Section>
                     <Img
-                        src={`${baseUrl}/static/logo.png`}
+                        src="https://sagd.wafios.online/static/logo.png"
                         width="150"
                         height="150"
                         alt="Wafios"
                     />
+                    <Text>{`${baseUrl}/static/logo.png`}</Text>
                 </Section>
                 <Section>
                     <Heading>Hello, {name}!</Heading>

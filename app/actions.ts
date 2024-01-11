@@ -4,7 +4,7 @@ import { revalidatePath, unstable_noStore } from 'next/cache';
 import { sql } from '@vercel/postgres';
 import { z } from 'zod';
 import { Resend } from 'resend';
-import { EmailTemplate } from '@/emails/email-template';
+import { EmailTemplate } from '@/components/email-template';
 
 const resend = new Resend('re_VpXRBWW8_5uaxGh71GCiZYQ5tDqb5HUtc');
 
