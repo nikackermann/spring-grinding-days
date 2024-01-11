@@ -69,15 +69,14 @@ export const EmailTemplate = ({ name }: Props) => (
                         the Wafios - Midwest Technical Center, or group code WAF
                     </Text>
                     <Text>
-                        - Going on their website{' '}
+                        - Going on their website
                         <Link href="http://www.evenhotels.com/chitinleypark">
                             http://www.evenhotels.com/chitinleypark
                         </Link>
                         , entering their stay dates & group code WAF
                     </Text>
                     <Text>
-                        Link:{' '}
-                        <Link href="http://www.evenhotels.com/chitinleypark">
+                        <Link href="https://www.evenhotels.com/redirect?path=hd&brandCode=VN&localeCode=en&regionCode=1&hotelCode=CHITN&_PMID=99801505&GPC=WAF&cn=no&viewfullsite=true">
                             Wafios - Midwest Technical Center
                         </Link>
                     </Text>
