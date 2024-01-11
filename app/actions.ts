@@ -55,15 +55,15 @@ export async function createRegistration(prevState: any, formData: FormData) {
         VALUES (${valid.name}, ${valid.email}, ${valid.company}, ${valid.attendance}, ${currentDate})
     `
             .then(() => {
-                // resend.emails.send({
-                //     from: 'Spring and Grinding Day <event@updates.wafios.online>',
-                //     to: valid.email,
-                //     subject:
-                //         'Welcome to Spring & Grinding Days 2024 - Presented by WAFIOS',
-                //     react: EmailTemplate({
-                //         name: valid.name,
-                //     }) as React.ReactElement,
-                // });
+                resend.emails.send({
+                    from: 'Spring and Grinding Day <event@updates.wafios.online>',
+                    to: valid.email,
+                    subject:
+                        'Welcome to Spring & Grinding Days 2024 - Presented by WAFIOS',
+                    react: EmailTemplate({
+                        name: valid.name,
+                    }) as React.ReactElement,
+                });
 
                 revalidatePath('/');
             })
