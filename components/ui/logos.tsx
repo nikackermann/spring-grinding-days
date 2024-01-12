@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import LogoBlue from '../../public/logo-blue.svg';
+import LogoIcon from '../../public/logo-icon.svg';
 import Logo1 from '@/public/logo1.jpg';
 import Logo2 from '@/public/logo2.png';
 import Logo3 from '@/public/logo3.jpg';
@@ -12,7 +13,7 @@ export function Logo() {
     return (
         <div className="flex items-center justify-center">
             <Image
-                src="/logo-icon.svg"
+                src={LogoIcon}
                 alt="logo"
                 width={150}
                 height={150}
