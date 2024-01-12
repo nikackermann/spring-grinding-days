@@ -5,7 +5,7 @@ import Banner from '@/components/ui/banner';
 
 export default async function Home() {
     return (
-        <main className="bg-[url('/bg.svg')] h-screen bg-cover bg-center bg-no-repeat relative min-h-screen pl-3 pr-3">
+        <main className="bg-[url('/bg.svg')] bg-cover bg-center bg-no-repeat relative min-h-screen pl-3 pr-3">
             {/* <div className="circle w-80 h-80 top-[-25%] right-[-25%]"></div>
             <div className="circle w-64 h-64 bottom-[-25%] right-[-25%]"></div> */}
             {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-brand [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] z-0"></div> */}

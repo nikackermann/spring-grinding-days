@@ -17,7 +17,7 @@ export function Logo() {
                 alt="logo"
                 width={150}
                 height={150}
-                className="w-auto md:hidden transition duration-500 ease-in-out transform" // Show this logo on mobile only
+                className="w-auto md:hidden transition duration-500 ease-in-out transform mt-3" // Show this logo on mobile only
                 priority
             />
             <Image
