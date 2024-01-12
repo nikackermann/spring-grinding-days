@@ -1,13 +1,7 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { RegisterForm } from './register-form';
-// import { ModeToggle } from '@/components/ui/mode-toggle';
-import { Logo } from '@/components/ui/logo';
+import { Logo, Logos } from '@/components/ui/logos';
 import Banner from '@/components/ui/banner';
-import Image from 'next/image';
-import Logo1 from '@/public/logo1.jpg';
-import Logo2 from '@/public/logo2.png';
-import Logo3 from '@/public/logo3.jpg';
-import Logo4 from '@/public/logo4.jpg';
 
 export default async function Home() {
     return (
@@ -32,51 +26,13 @@ export default async function Home() {
                 <div className="w-full max-w-2xl">
                     <Card className="min-w-full">
                         <CardHeader className="-mt-2 md:mt-1">
-                            <div className="md:flex hidden space-x-10 justify-center">
-                                <Image
-                                    src={Logo1}
-                                    alt="Logo 1"
-                                    width={62}
-                                    height={62}
-                                    priority
-                                />
-                                <Image
-                                    src={Logo2}
-                                    alt="Logo 2"
-                                    width={62}
-                                    height={62}
-                                    priority
-                                />
-                                <Image
-                                    src={Logo3}
-                                    alt="Logo 3"
-                                    width={62}
-                                    height={62}
-                                    priority
-                                />
-                                <Image
-                                    src={Logo4}
-                                    alt="Logo 4"
-                                    width={60}
-                                    height={60}
-                                    priority
-                                />
-                            </div>
+                            <Logos />
                         </CardHeader>
-                        {/* <CardHeader>
-                            <CardTitle className="text-brand">
-                                Join us at our Midwest Technical Center
-                            </CardTitle>
-                        </CardHeader> */}
                         <CardContent className="">
                             <RegisterForm />
                         </CardContent>
                     </Card>
                 </div>
-                {/* <footer className="absolute bottom-0 w-full text-center py-4 text-neutral-400 text-sm mb-4">
-                    &copy; {new Date().getFullYear()} Wafios (WMC). All rights
-                    reserved.
-                </footer> */}
             </div>
         </main>
     );

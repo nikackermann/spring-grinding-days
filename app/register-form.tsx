@@ -9,7 +9,6 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { ClockIcon } from '@radix-ui/react-icons';
-
 import dynamic from 'next/dynamic';
 
 const initialState = {
@@ -148,7 +147,7 @@ export function RegisterForm() {
                         <Label htmlFor="option-two">Day 2</Label>
                         <ClockIcon />
                         <span className="text-xs font-light">
-                            (9 AM - 12 PM no lunch)z
+                            (9 AM - 12 PM no lunch)
                         </span>
                     </div>
                     <div className="flex items-center space-x-2">
