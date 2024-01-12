@@ -25,10 +25,10 @@ export default async function Home() {
                 </div>
                 <div className="w-full max-w-2xl">
                     <Card className="min-w-full">
-                        <CardHeader className="-mt-2 md:mt-1">
+                        <CardHeader className="-mt-5 md:mt-1">
                             <Logos />
                         </CardHeader>
-                        <CardContent className="">
+                        <CardContent>
                             <RegisterForm />
                         </CardContent>
                     </Card>
