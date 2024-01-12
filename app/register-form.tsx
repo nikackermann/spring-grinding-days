@@ -7,6 +7,7 @@ import { createRegistration } from '@/app/actions';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import dynamic from 'next/dynamic';
 
@@ -18,7 +19,7 @@ const initialState = {
 function Spinner() {
     return (
         <svg
-            className="animate-spin h-5 w-5 text-black"
+            className="animate-spin h-5 w-5 text-white"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -53,7 +54,7 @@ function SubmitButton() {
             aria-label="Register"
             type="submit"
             aria-disabled={pending}
-            className="rounded-full h-10 relative flex items-center justify-center"
+            className="rounded-full h-10 relative flex items-center justify-center bg-brand text-white hover:bg-brand/90 hover:text-white transition-colors duration-200"
         >
             {pending ? <Spinner /> : 'Register'}
         </Button>
@@ -76,22 +77,22 @@ export function RegisterForm() {
 
     if (state.status === 'success') {
         return (
-            <div className="h-12 relative">
+            <div className="h-12 relative flex justify-center">
                 <Success className="absolute" />
             </div>
         );
     }
 
     return (
-        <form ref={formRef} className="w-full" action={formAction}>
-            <div className="grid w-full items-center gap-4">
+        <form ref={formRef} className="w-full " action={formAction}>
+            <div className="grid w-full items-center gap-5">
                 <Input
                     type="text"
                     id="name"
                     name="name"
                     placeholder="Name"
                     required
-                    className="py-2 w-full rounded-full h-12 text-base border-2 focus-visible:ring-2"
+                    className="py-2 w-full rounded-full h-12 text-base"
                     autoComplete="off"
                 />
                 <Input
@@ -101,7 +102,7 @@ export function RegisterForm() {
                     placeholder="Email"
                     required
                     aria-live="polite"
-                    className={`py-2 w-full rounded-full h-12 text-base border-2 ${
+                    className={`py-2 w-full rounded-full h-12 text-base ${
                         state.email === 'email' ? 'border-red-500' : ''
                     }`}
                     autoComplete="off"
@@ -112,15 +113,15 @@ export function RegisterForm() {
                     name="company"
                     placeholder="Company"
                     required
-                    className="py-2 w-full rounded-full h-12 text-base border-2"
+                    className="py-2 w-full rounded-full h-12 text-base"
                     autoComplete="off"
                 />
+                <Label className="mt-2 ml-2">I will be attending...</Label>
                 <RadioGroup
                     defaultValue="both"
-                    className="py-2 w-full space-y-2 ml-4"
+                    className="flex flex-col py-2 w-full ml-2 space-y-3"
                     name="attendance"
                 >
-                    <Label>I will be attending... </Label>
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem
                             value="day-one"
@@ -129,7 +130,10 @@ export function RegisterForm() {
                             aria-label="Day 1 - Wednesday"
                             required
                         />
-                        <Label htmlFor="option-one">Day 1 - March 20</Label>
+                        <Label htmlFor="option-one">Day 1</Label>
+                        <span className="text-xs font-light">
+                            9 AM - 5 PM with lunch
+                        </span>
                     </div>
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem
@@ -139,7 +143,10 @@ export function RegisterForm() {
                             aria-label="Day 2 - Thursday"
                             required
                         />
-                        <Label htmlFor="option-two">Day 2 - March 21</Label>
+                        <Label htmlFor="option-two">Day 2</Label>
+                        <span className="text-xs font-light">
+                            9 AM - 12 PM no lunch
+                        </span>
                     </div>
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem
@@ -149,7 +156,7 @@ export function RegisterForm() {
                             aria-label="Both days"
                             required
                         />
-                        <Label htmlFor="option-three">Both days</Label>
+                        <Label htmlFor="option-three">Both</Label>
                     </div>
                 </RadioGroup>
                 <SubmitButton />

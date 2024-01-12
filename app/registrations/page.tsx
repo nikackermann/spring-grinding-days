@@ -1,5 +1,6 @@
 import { EventRegistrationList } from '@/components/event-registration-list';
 import { sql } from '@vercel/postgres';
+import { Suspense } from 'react';
 
 type Registration = {
     id: number;
@@ -28,7 +29,19 @@ export default async function Registrations() {
 
     return (
         <div>
-            <EventRegistrationList registrations={registrations} />
+            <div className="flex flex-col w-full min-h-screen px-4 py-6 md:px-6">
+                <header className="mb-6">
+                    <h1 className="text-3xl font-bold">
+                        Spring & Grinding Days
+                    </h1>
+                    <p className="text-gray-500 dark:text-gray-400">
+                        All registrations for Spring & Grinding Days
+                    </p>
+                </header>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <EventRegistrationList registrations={registrations} />
+                </Suspense>
+            </div>
         </div>
     );
 }

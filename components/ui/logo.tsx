@@ -1,19 +1,22 @@
-'use client';
-
 import Image from 'next/image';
-import { useTheme } from 'next-themes';
 import LogoBlue from '../../public/logo-blue.svg';
-import LogoWhite from '../../public/logo-white.svg';
 
 export function Logo() {
-    const { theme, setTheme } = useTheme();
     return (
         <div className="flex items-center justify-center">
             <Image
-                src={theme === 'light' ? LogoBlue : LogoWhite}
+                src="/logo-icon.svg"
+                alt="logo"
+                width={150}
+                height={150}
+                className="w-auto md:hidden transition duration-500 ease-in-out transform" // Show this logo on mobile only
+                priority
+            />
+            <Image
+                src={LogoBlue}
                 alt="logo"
                 height={100}
-                className="w-auto" // Add this line
+                className="hidden w-auto md:block transition duration-500 ease-in-out transform" // Hide this logo on mobile
                 priority
             />
         </div>
