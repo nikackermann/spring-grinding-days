@@ -25,8 +25,6 @@ export default async function Registrations() {
         registered_date: row.registered_date,
     }));
 
-    console.log(registrations);
-
     return (
         <div>
             <div className="flex flex-col w-full min-h-screen px-4 py-6 md:px-6">
