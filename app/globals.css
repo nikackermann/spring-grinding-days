@@ -65,7 +65,13 @@
     --ring: 0 0% 83.1%;
   }
 }
- 
+.circle {
+  position: fixed;
+  border-radius: 50%;
+  border: 12px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+}
+
 @layer base {
   * {
     @apply border-border;

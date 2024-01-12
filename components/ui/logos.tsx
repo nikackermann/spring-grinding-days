@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import LogoBlue from '../../public/logo-blue.svg';
+import LogoWhite from '../../public/logo-white.svg';
 import LogoIcon from '../../public/logo-icon.svg';
 import Logo1 from '@/public/logo1.jpg';
 import Logo2 from '@/public/logo2.png';
@@ -21,7 +21,7 @@ export function Logo() {
                 priority
             />
             <Image
-                src={LogoBlue}
+                src={LogoWhite}
                 alt="logo"
                 height={100}
                 className="hidden w-auto md:block transition duration-500 ease-in-out transform" // Hide this logo on mobile
