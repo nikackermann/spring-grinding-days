@@ -1,14 +1,15 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useFormState } from 'react-dom';
 import { useFormStatus } from 'react-dom';
 import { createRegistration } from '@/app/actions';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { ClockIcon } from '@radix-ui/react-icons';
+
 import dynamic from 'next/dynamic';
 
 const initialState = {
@@ -131,8 +132,9 @@ export function RegisterForm() {
                             required
                         />
                         <Label htmlFor="option-one">Day 1</Label>
+                        <ClockIcon />
                         <span className="text-xs font-light">
-                            9 AM - 5 PM with lunch
+                            (9 AM - 5 PM with lunch)
                         </span>
                     </div>
                     <div className="flex items-center space-x-2">
@@ -144,8 +146,9 @@ export function RegisterForm() {
                             required
                         />
                         <Label htmlFor="option-two">Day 2</Label>
+                        <ClockIcon />
                         <span className="text-xs font-light">
-                            9 AM - 12 PM no lunch
+                            (9 AM - 12 PM no lunch)z
                         </span>
                     </div>
                     <div className="flex items-center space-x-2">

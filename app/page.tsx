@@ -4,6 +4,10 @@ import { RegisterForm } from './register-form';
 import { Logo } from '@/components/ui/logo';
 import Banner from '@/components/ui/banner';
 import Image from 'next/image';
+import Logo1 from '@/public/logo1.jpg';
+import Logo2 from '@/public/logo2.png';
+import Logo3 from '@/public/logo3.jpg';
+import Logo4 from '@/public/logo4.jpg';
 
 export default async function Home() {
     return (
@@ -30,28 +34,32 @@ export default async function Home() {
                         <CardHeader className="-mt-2 md:mt-1">
                             <div className="md:flex hidden space-x-10 justify-center">
                                 <Image
-                                    src="/logo1.jpg"
+                                    src={Logo1}
                                     alt="Logo 1"
-                                    width={60}
-                                    height={60}
+                                    width={62}
+                                    height={62}
+                                    priority
                                 />
                                 <Image
-                                    src="/logo2.png"
+                                    src={Logo2}
                                     alt="Logo 2"
-                                    width={60}
-                                    height={60}
+                                    width={62}
+                                    height={62}
+                                    priority
                                 />
                                 <Image
-                                    src="/logo3.jpg"
+                                    src={Logo3}
                                     alt="Logo 3"
-                                    width={60}
-                                    height={60}
+                                    width={62}
+                                    height={62}
+                                    priority
                                 />
                                 <Image
-                                    src="/logo4.jpg"
+                                    src={Logo4}
                                     alt="Logo 4"
                                     width={60}
                                     height={60}
+                                    priority
                                 />
                             </div>
                         </CardHeader>
