@@ -13,18 +13,19 @@ export function Logo({ className }: any) {
     return (
         <div className="flex justify-center md:justify-start">
             <Image
-                src={LogoIcon}
+                src={LogoWhite}
                 alt="logo"
-                width={150}
-                height={150}
-                className="mt-3 w-auto transform transition duration-500 ease-in-out md:hidden" // Show this logo on mobile only
+                width={120}
+                height={80}
+                className="mb-3 mt-3 transform transition duration-500 ease-in-out md:hidden" // Show this logo on mobile only
                 priority
             />
             <Image
                 src={LogoWhite}
                 alt="logo"
-                height={100}
-                className="hidden w-auto transform transition duration-500 ease-in-out md:block" // Hide this logo on mobile
+                width={120}
+                height={80}
+                className="hidden transform transition duration-500 ease-in-out md:block" // Hide this logo on mobile
                 priority
             />
         </div>
