@@ -6,12 +6,12 @@ import Banner from '@/components/ui/banner'
 export default async function Home() {
     return (
         <main className="relative min-h-screen bg-[url('/bg2.svg')] bg-cover bg-center bg-no-repeat">
-            <div className="p-3">
+            <div className="md: p-5 md:pl-10 md:pt-8">
                 <Logo />
             </div>
             <div className="flex flex-col md:space-y-14">
                 <div className="relative z-10 mx-auto flex h-auto w-full flex-col items-center justify-center overflow-auto md:max-h-full md:min-h-[85vh] md:space-y-4">
-                    <div className="mt-4">
+                    <div className="">
                         <div className="text-center text-xs font-light text-brandLight md:text-base lg:text-lg">
                             WAFIOS, with our partners invite you to the Second
                             Annual
