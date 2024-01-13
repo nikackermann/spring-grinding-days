@@ -54,7 +54,7 @@ function SubmitButton() {
             aria-label="Register"
             type="submit"
             aria-disabled={pending}
-            className="rounded-full h-10 relative flex items-center justify-center bg-brand text-white hover:bg-brand/90 hover:text-white transition-colors duration-200"
+            className="h-10 relative flex items-center justify-center bg-brand text-white hover:bg-brand/90 hover:text-white transition-colors duration-200"
         >
             {pending ? <Spinner /> : 'Register'}
         </Button>
@@ -92,7 +92,7 @@ export function RegisterForm() {
                     name="name"
                     placeholder="Name"
                     required
-                    className="py-2 w-full rounded-full h-12 text-base"
+                    className="py-2 w-full h-12 text-base"
                     autoComplete="off"
                 />
                 <Input
@@ -102,7 +102,7 @@ export function RegisterForm() {
                     placeholder="Email"
                     required
                     aria-live="polite"
-                    className={`py-2 w-full rounded-full h-12 text-base ${
+                    className={`py-2 w-full h-12 text-base ${
                         state.email === 'email' ? 'border-red-500' : ''
                     }`}
                     autoComplete="off"
@@ -113,7 +113,7 @@ export function RegisterForm() {
                     name="company"
                     placeholder="Company"
                     required
-                    className="py-2 w-full rounded-full h-12 text-base"
+                    className="py-2 w-full h-12 text-base"
                     autoComplete="off"
                 />
                 <Label className="mt-2 ml-2">I will be attending...</Label>
