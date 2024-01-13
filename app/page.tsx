@@ -24,7 +24,7 @@ export default async function Home() {
                     <div className="pb-6 pt-4 text-sm font-light leading-loose tracking-wide text-brandLight sm:text-base md:mb-6 md:mt-4 md:text-lg">
                         MAR 20 — MAR 21
                     </div>
-                    <div className="flex w-full max-w-sm items-center justify-center pl-4 pr-4 md:max-w-xl">
+                    <div className="flex w-full max-w-lg items-center justify-center pl-4 pr-4 md:max-w-xl">
                         <Card className="w-full">
                             <CardHeader className="-mt-5 md:mt-1">
                                 <Logos />
