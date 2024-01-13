@@ -1,17 +1,30 @@
+'use client'
+
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { RegisterForm } from './register-form'
 import { Logo, Logos } from '@/components/ui/logos'
 import Banner from '@/components/ui/banner'
+import { motion } from 'framer-motion'
 
-export default async function Home() {
+export default function Home() {
     return (
         <main className="relative min-h-screen bg-[url('/bg2.svg')] bg-cover bg-center bg-no-repeat">
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-brand [mask-image:radial-gradient(ellipse_at_center,transparent_55%,black)] dark:bg-black"></div>
             <div className="md: p-5 md:pl-10 md:pt-8">
                 <Logo />
             </div>
-            <div className="flex flex-col md:space-y-14">
-                <div className="relative z-10 mx-auto flex h-auto w-full flex-col items-center justify-center overflow-auto md:max-h-full md:min-h-[85vh] md:space-y-4">
+            <motion.div
+                className="flex flex-col md:space-y-14"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+            >
+                <motion.div
+                    className="relative z-10 mx-auto flex h-auto w-full flex-col items-center justify-center overflow-auto md:max-h-full md:min-h-[85vh] md:space-y-4"
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.2, duration: 0.3 }}
+                >
                     <div className="">
                         <div className="text-center text-xs font-light text-brandLight md:text-base lg:text-lg">
                             WAFIOS, with our partners invite you to the Second
@@ -35,8 +48,8 @@ export default async function Home() {
                             </CardContent>
                         </Card>
                     </div>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </main>
     )
 }

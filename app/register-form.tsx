@@ -1,25 +1,26 @@
-'use client';
+'use client'
 
-import { useEffect, useRef } from 'react';
-import { useFormState } from 'react-dom';
-import { useFormStatus } from 'react-dom';
-import { createRegistration } from '@/app/actions';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Button } from '@/components/ui/button';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { ClockIcon } from '@radix-ui/react-icons';
-import dynamic from 'next/dynamic';
+import { useEffect, useRef } from 'react'
+import { useFormState } from 'react-dom'
+import { useFormStatus } from 'react-dom'
+import { createRegistration } from '@/app/actions'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Button } from '@/components/ui/button'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+import { ClockIcon } from '@radix-ui/react-icons'
+import dynamic from 'next/dynamic'
+import { motion } from 'framer-motion'
 
 const initialState = {
     message: '',
-    email: '',
-};
+    email: ''
+}
 
 function Spinner() {
     return (
         <svg
-            className="animate-spin h-5 w-5 text-white"
+            className="h-5 w-5 animate-spin text-white"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -38,38 +39,38 @@ function Spinner() {
                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
             ></path>
         </svg>
-    );
+    )
 }
 
 // Dynamically import the Success component
 const Success = dynamic(() => import('@/components/ui/success'), {
     // This option will make the component get preloaded in the background
-    ssr: true, // Add this line
-});
+    ssr: true // Add this line
+})
 
 function SubmitButton() {
-    const { pending } = useFormStatus();
+    const { pending } = useFormStatus()
     return (
         <Button
             aria-label="Register"
             type="submit"
             aria-disabled={pending}
-            className="h-10 relative flex items-center justify-center bg-brand text-white hover:bg-brand/90 hover:text-white transition-colors duration-200"
+            className="relative flex h-10 items-center justify-center bg-brand text-white transition-colors duration-200 hover:bg-brand/90 hover:text-white"
         >
             {pending ? <Spinner /> : 'Register'}
         </Button>
-    );
+    )
 }
 
 export function RegisterForm() {
-    const [state, formAction] = useFormState(createRegistration, initialState);
-    const formRef = useRef<HTMLFormElement>(null);
+    const [state, formAction] = useFormState(createRegistration, initialState)
+    const formRef = useRef<HTMLFormElement>(null)
 
     useEffect(() => {
         if (state.status === 'success') {
-            formRef.current?.reset();
+            formRef.current?.reset()
         }
-    }, [state.status]);
+    }, [state.status])
 
     // if (pending) {
     //     return <Loading />;
@@ -77,10 +78,15 @@ export function RegisterForm() {
 
     if (state.status === 'success') {
         return (
-            <div className="h-12 relative flex justify-center">
+            <motion.div
+                className="relative flex h-12 justify-center"
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+            >
                 <Success className="absolute" />
-            </div>
-        );
+            </motion.div>
+        )
     }
 
     return (
@@ -92,7 +98,7 @@ export function RegisterForm() {
                     name="name"
                     placeholder="Name"
                     required
-                    className="py-2 w-full h-12 text-base"
+                    className="h-12 w-full py-2 text-base"
                     autoComplete="off"
                 />
                 <Input
@@ -102,7 +108,7 @@ export function RegisterForm() {
                     placeholder="Email"
                     required
                     aria-live="polite"
-                    className={`py-2 w-full h-12 text-base ${
+                    className={`h-12 w-full py-2 text-base ${
                         state.email === 'email' ? 'border-red-500' : ''
                     }`}
                     autoComplete="off"
@@ -113,13 +119,13 @@ export function RegisterForm() {
                     name="company"
                     placeholder="Company"
                     required
-                    className="py-2 w-full h-12 text-base"
+                    className="h-12 w-full py-2 text-base"
                     autoComplete="off"
                 />
-                <Label className="mt-2 ml-2">I will be attending...</Label>
+                <Label className="ml-2 mt-2">I will be attending...</Label>
                 <RadioGroup
                     defaultValue="both"
-                    className="flex flex-col py-2 w-full ml-2 space-y-3"
+                    className="ml-2 flex w-full flex-col space-y-3 py-2"
                     name="attendance"
                 >
                     <div className="flex items-center space-x-2">
@@ -164,5 +170,5 @@ export function RegisterForm() {
                 <SubmitButton />
             </div>
         </form>
-    );
+    )
 }
