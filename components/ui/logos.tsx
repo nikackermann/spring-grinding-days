@@ -9,7 +9,7 @@ import Logo5 from '@/public/logo5.png';
 
 const logos = [Logo1, Logo2, Logo3, Logo4, Logo5];
 
-export function Logo() {
+export function Logo({ className }: any) {
     return (
         <div className="flex items-center justify-center">
             <Image
@@ -31,7 +31,7 @@ export function Logo() {
     );
 }
 
-export function Logos() {
+export function Logos({ className }: any) {
     return (
         <div className="md:flex hidden space-x-10 justify-center">
             {logos.map((logo, index) => (
