@@ -6,6 +6,7 @@ import Banner from '@/components/ui/banner'
 export default async function Home() {
     return (
         <main className="relative min-h-screen bg-[url('/bg2.svg')] bg-cover bg-center bg-no-repeat">
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-brand [mask-image:radial-gradient(ellipse_at_center,transparent_55%,black)] dark:bg-black"></div>
             <div className="md: p-5 md:pl-10 md:pt-8">
                 <Logo />
             </div>
