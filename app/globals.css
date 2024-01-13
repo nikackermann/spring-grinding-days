@@ -93,3 +93,7 @@
 .animate-fade-in {
   animation: fadeIn 1s ease-in;
 }
+
+.h-90vh {
+  height: 90vh;
+}

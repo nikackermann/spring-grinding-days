@@ -11,7 +11,7 @@ const logos = [Logo1, Logo2, Logo3, Logo4, Logo5];
 
 export function Logo({ className }: any) {
     return (
-        <div className="flex items-center justify-center">
+        <div className="flex justify-center md:justify-start">
             <Image
                 src={LogoIcon}
                 alt="logo"
