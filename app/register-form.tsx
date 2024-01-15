@@ -136,10 +136,12 @@ export function RegisterForm() {
                             aria-label="Day 1 - Wednesday"
                             required
                         />
-                        <Label htmlFor="option-one">Day 1</Label>
+                        <Label htmlFor="option-one" className="mr-6">
+                            Day 1
+                        </Label>
                         <ClockIcon />
                         <span className="text-xs font-light">
-                            (9 AM - 5 PM with lunch)
+                            9 AM - 5 PM with lunch
                         </span>
                     </div>
                     <div className="flex items-center space-x-2">
@@ -150,7 +152,11 @@ export function RegisterForm() {
                             aria-label="Day 2 - Thursday"
                             required
                         />
-                        <Label htmlFor="option-two">Day 2</Label>
+                        <Label htmlFor="option-two" className="mr-2">
+                            Day 2
+                        </Label>
+                        <ClockIcon />
+                        <span className="text-xs font-light">9 AM - 12 PM</span>
                     </div>
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem
