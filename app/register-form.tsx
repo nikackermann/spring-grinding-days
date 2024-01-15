@@ -151,10 +151,6 @@ export function RegisterForm() {
                             required
                         />
                         <Label htmlFor="option-two">Day 2</Label>
-                        <ClockIcon />
-                        <span className="text-xs font-light">
-                            (9 AM - 12 PM no lunch)
-                        </span>
                     </div>
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem
