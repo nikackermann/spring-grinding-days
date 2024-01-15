@@ -6,8 +6,9 @@ import Logo2 from '@/public/logo2.png'
 import Logo3 from '@/public/logo3.jpg'
 import Logo4 from '@/public/logo4.jpg'
 import Logo5 from '@/public/logo5.png'
+import Logo6 from '@/public/logo6.jpg'
 
-const logos = [Logo1, Logo2, Logo3, Logo4, Logo5]
+const logos = [Logo1, Logo2, Logo3, Logo4, Logo5, Logo6]
 
 export function Logo({ className }: any) {
     return (
@@ -34,14 +35,14 @@ export function Logo({ className }: any) {
 
 export function Logos({ className }: any) {
     return (
-        <div className="hidden justify-center space-x-10 md:flex">
+        <div className="hidden justify-center space-x-6 md:flex">
             {logos.map((logo, index) => (
                 <Image
                     key={index}
                     src={logo}
                     alt={`Logo ${index + 1}`}
-                    width={62}
-                    height={62}
+                    width={60}
+                    height={60}
                     priority
                 />
             ))}
