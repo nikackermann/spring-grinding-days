@@ -115,6 +115,15 @@ export function RegisterForm() {
                 />
                 <Input
                     type="text"
+                    id="title"
+                    name="title"
+                    placeholder="Title"
+                    required
+                    className="h-12 w-full py-2 text-base"
+                    autoComplete="off"
+                />
+                <Input
+                    type="text"
                     id="company"
                     name="company"
                     placeholder="Company"

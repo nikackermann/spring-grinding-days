@@ -9,28 +9,29 @@ import {
     TableCell,
     TableBody,
     Table,
-    TableFooter,
-} from '@/components/ui/table';
+    TableFooter
+} from '@/components/ui/table'
 
 type Registration = {
-    id: number;
-    name: string;
-    email: string;
-    company: string;
-    attendance: string;
-    registered_date: Date;
-};
+    id: number
+    name: string
+    email: string
+    title: string
+    company: string
+    attendance: string
+    registered_date: Date
+}
 
 const attendanceMap: any = {
     both: 'Both',
     'day-one': 'Day 1',
-    'day-two': 'Day 2',
-};
+    'day-two': 'Day 2'
+}
 
 export function EventRegistrationList({
-    registrations,
+    registrations
 }: {
-    registrations: Registration[];
+    registrations: Registration[]
 }) {
     return (
         <Table>
@@ -39,6 +40,7 @@ export function EventRegistrationList({
                     <TableHead>Name</TableHead>
                     <TableHead>Email</TableHead>
                     <TableHead>Company</TableHead>
+                    <TableHead>Title</TableHead>
                     <TableHead>Attending</TableHead>
                     <TableHead>Registration Date</TableHead>
                 </TableRow>
@@ -49,6 +51,7 @@ export function EventRegistrationList({
                         <TableCell>{registration.name}</TableCell>
                         <TableCell>{registration.email}</TableCell>
                         <TableCell>{registration.company}</TableCell>
+                        <TableCell>{registration.title}</TableCell>
                         <TableCell>
                             {attendanceMap[registration.attendance]}
                         </TableCell>
@@ -66,5 +69,5 @@ export function EventRegistrationList({
                 </TableRow>
             </TableFooter>
         </Table>
-    );
+    )
 }
