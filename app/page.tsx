@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 
 export default function Home() {
     return (
-        <main className="relative min-h-screen bg-[url('/bg2.svg')] bg-cover bg-center bg-no-repeat">
+        <main className="relative min-h-screen bg-[url('/bg2.svg')] bg-cover bg-center bg-no-repeat pb-14">
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-brand [mask-image:radial-gradient(ellipse_at_center,transparent_55%,black)] dark:bg-black"></div>
             <div className="md: p-5 md:pl-10 md:pt-8">
                 <Logo />
@@ -38,7 +38,7 @@ export default function Home() {
                     <div className="pb-6 pt-4 text-sm font-light leading-loose tracking-wide text-brandLight sm:text-base md:mb-6 md:mt-4 md:text-lg">
                         MAR 20 — MAR 21
                     </div>
-                    <div className="flex w-full max-w-lg items-center justify-center pl-4 pr-4 md:max-w-xl">
+                    <div className="mb-10 flex w-full max-w-lg items-center justify-center pl-4 pr-4 md:max-w-xl">
                         <Card className="w-full">
                             <CardHeader className="-mt-5 md:mt-1">
                                 <Logos />
