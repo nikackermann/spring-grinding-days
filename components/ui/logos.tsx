@@ -1,11 +1,10 @@
 import Image from 'next/image'
 import LogoWhite from '../../public/logo-white.svg'
-import LogoIcon from '../../public/logo-icon.svg'
 import Logo1 from '@/public/logo1.jpg'
 import Logo2 from '@/public/logo2.png'
 import Logo3 from '@/public/logo3.jpg'
 import Logo4 from '@/public/logo4.jpg'
-import Logo5 from '@/public/logo5.png'
+import Logo5 from '@/public/logo5.svg'
 import Logo6 from '@/public/logo6.jpg'
 
 const logos = [Logo1, Logo2, Logo3, Logo4, Logo5, Logo6]
